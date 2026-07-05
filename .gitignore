@@ -1,0 +1,12 @@
+.next/
+node_modules/
+.codex/
+
+.env
+.env.*
+!.env.example
+
+out/
+coverage/
+*.log
+.DS_Store
