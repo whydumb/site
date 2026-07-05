@@ -10,6 +10,7 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const outcomes = [
   { value: "42%", label: "반복 업무 처리 시간 감소" },
@@ -50,6 +51,7 @@ export default function Home() {
         <nav aria-label="주요 메뉴">
           <a href="#platform">플랫폼</a>
           <a href="#solutions">솔루션</a>
+          <Link href="/team">팀</Link>
           <a href="#security">보안</a>
           <a href="#contact">문의</a>
         </nav>
