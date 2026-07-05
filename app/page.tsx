@@ -9,7 +9,6 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const outcomes = [
@@ -63,14 +62,17 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <Image
-          className="hero-image"
-          src="/images/enterprise-ai-hero.png"
-          alt=""
-          priority
-          fill
-          sizes="100vw"
-        />
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/videos/duck-background.mp4" type="video/mp4" />
+        </video>
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow">Enterprise AI Platform</p>
