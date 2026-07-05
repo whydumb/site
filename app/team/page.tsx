@@ -133,6 +133,7 @@ export default function TeamPage() {
           <Link href="/team" aria-current="page">
             팀
           </Link>
+          <Link href="/organization">조직도</Link>
           <Link href="/#security">보안</Link>
           <Link href="/#contact">문의</Link>
         </nav>

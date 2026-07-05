@@ -52,6 +52,7 @@ export default function Home() {
           <a href="#platform">플랫폼</a>
           <a href="#solutions">솔루션</a>
           <Link href="/team">팀</Link>
+          <Link href="/organization">조직도</Link>
           <a href="#security">보안</a>
           <a href="#contact">문의</a>
         </nav>

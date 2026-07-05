@@ -615,6 +615,230 @@ p {
   color: #24332c;
 }
 
+.chart-page {
+  background: var(--white);
+  min-height: 100svh;
+  overflow-x: hidden;
+  padding: 118px 34px 86px;
+}
+
+.chart-heading {
+  margin: 0 auto 42px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.chart-heading h1 {
+  color: var(--ink);
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.org-diagram {
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: visible;
+  padding: 0;
+}
+
+.diagram-top {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+  margin: 0 auto;
+  position: relative;
+  width: 260px;
+}
+
+.diagram-icon {
+  align-items: center;
+  color: #111111;
+  display: flex;
+  justify-content: center;
+  min-height: 78px;
+  position: relative;
+}
+
+.chief-icon {
+  margin-bottom: -2px;
+}
+
+.yellow-node {
+  align-items: center;
+  background: #ffcc05;
+  color: #111111;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 900;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 50px;
+  padding: 0 18px;
+  text-align: center;
+  width: 220px;
+}
+
+.diagram-top::after {
+  background: #7d8790;
+  bottom: -50px;
+  content: "";
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  width: 1px;
+}
+
+.diagram-branches {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(190px, 1fr) minmax(360px, 1.6fr) minmax(170px, 0.9fr);
+  margin-top: 88px;
+  min-width: 0;
+  position: relative;
+}
+
+.diagram-branches::before {
+  background: #7d8790;
+  content: "";
+  height: 1px;
+  left: 12.5%;
+  position: absolute;
+  right: 12.5%;
+  top: -40px;
+}
+
+.diagram-column {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+  position: relative;
+}
+
+.diagram-column::before {
+  background: #7d8790;
+  content: "";
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: -40px;
+  width: 1px;
+}
+
+.diagram-column .yellow-node {
+  width: 220px;
+}
+
+.member-list {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.55;
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.chair {
+  padding-bottom: 112px;
+}
+
+.division-row,
+.team-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 430px;
+  position: relative;
+  width: 100%;
+}
+
+.division-row {
+  margin-top: 78px;
+}
+
+.team-row {
+  margin-top: 78px;
+}
+
+.division-row::before {
+  background: #7d8790;
+  content: "";
+  height: 39px;
+  left: 50%;
+  position: absolute;
+  top: -78px;
+  width: 1px;
+}
+
+.division-row::after,
+.team-row::before {
+  background: #7d8790;
+  content: "";
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 116px;
+}
+
+.division-row::after {
+  top: -40px;
+}
+
+.team-row::before {
+  top: -40px;
+  width: 232px;
+}
+
+.team-row::after {
+  background: #7d8790;
+  content: "";
+  height: 39px;
+  left: 50%;
+  position: absolute;
+  top: -78px;
+  width: 1px;
+}
+
+.division-row span,
+.team-row span {
+  align-items: center;
+  color: var(--white);
+  display: flex;
+  font-weight: 900;
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 44px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 8px 12px;
+  position: relative;
+  text-align: center;
+  white-space: normal;
+}
+
+.division-row span {
+  background: #939aae;
+  flex: 1 1 0;
+}
+
+.team-row span {
+  background: #a89676;
+  flex: 1 1 0;
+}
+
+.division-row span::before,
+.team-row span::before {
+  background: #7d8790;
+  content: "";
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: -40px;
+  width: 1px;
+}
+
 .security-band {
   align-items: end;
   background: var(--white);
@@ -707,6 +931,7 @@ footer {
   .team-hero,
   .org-section,
   .people-section,
+  .chart-page,
   .security-band,
   .contact-section {
     padding: 72px 22px;
@@ -728,6 +953,51 @@ footer {
 
   .org-branches {
     padding-top: 22px;
+  }
+
+  .org-diagram {
+    overflow-x: visible;
+  }
+
+  .diagram-top,
+  .diagram-branches {
+    width: 100%;
+  }
+
+  .diagram-top::after,
+  .diagram-branches::before,
+  .diagram-column::before,
+  .division-row::before,
+  .division-row::after,
+  .team-row::before,
+  .team-row::after,
+  .division-row span::before,
+  .team-row span::before {
+    display: none;
+  }
+
+  .diagram-branches {
+    gap: 18px;
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+    min-width: 0;
+  }
+
+  .diagram-column {
+    background: #f7f8f5;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .chair {
+    padding-bottom: 20px;
+  }
+
+  .division-row,
+  .team-row {
+    flex-wrap: wrap;
+    margin-top: 20px;
   }
 
   .person-card {
@@ -753,6 +1023,10 @@ footer {
     font-size: 2.45rem;
   }
 
+  .chart-heading h1 {
+    font-size: 2.55rem;
+  }
+
   h2 {
     font-size: 1.85rem;
   }
@@ -775,6 +1049,11 @@ footer {
 
   .person-card {
     grid-template-columns: 1fr;
+  }
+
+  .yellow-node,
+  .diagram-column .yellow-node {
+    width: 100%;
   }
 
   .person-avatar {
