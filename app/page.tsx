@@ -20,18 +20,18 @@ const outcomes = [
 const capabilities = [
   {
     icon: Workflow,
-    title: "업무 흐름 자동화",
-    text: "문서 검토, 고객 응대, 내부 승인처럼 반복되는 프로세스를 팀의 규칙에 맞춰 연결합니다.",
+    title: "Continual Learning",
+    text: " We share our algorithmic research achievements that overcome 'catastrophic forgetting,' enabling continuous, lifelong learning just like humans without losing previously acquired knowledge",
   },
   {
     icon: Network,
-    title: "사내 지식 연결",
-    text: "정책, 매뉴얼, 회의 기록, 제품 문서를 검색 가능한 지식 계층으로 정리합니다.",
+    title: "Open source",
+    text: "We are making all our work public to advance the AI research ecosystem.",
   },
   {
     icon: BarChart3,
-    title: "의사결정 보조",
-    text: "영업, 운영, 재무 데이터를 한 화면에서 요약하고 다음 행동을 제안합니다.",
+    title: "Architecture Research",
+    text: "We are sharing the experimental results of a next-generation architecture that goes beyond the Transformer, enabling logical reasoning beyond human levels.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function Home() {
           <span className="brand-symbol" aria-hidden="true">
             <Sparkles size={18} />
           </span>
-          NOVA Business AI
+          Alicia
         </a>
         <nav aria-label="주요 메뉴">
           <a href="#platform">플랫폼</a>
@@ -75,21 +75,20 @@ export default function Home() {
         </video>
         <div className="hero-shade" />
         <div className="hero-content">
-          <p className="eyebrow">Enterprise AI Platform</p>
+          <p className="eyebrow">INDEPENDENT AGI RESEARCH</p>
           <h1>
-            <span className="title-line">기업의 일을 더 빠르고</span>
-            <span className="title-line">정확하게 만드는 AI</span>
+            <span className="title-line">Exploring the unknown universe of AGI</span>
           </h1>
           <p className="hero-copy">
-            팀의 데이터, 정책, 워크플로를 하나로 연결해 매일 반복되는 업무를 자동화하고 더 나은 결정을 돕습니다.
+            Fundamental AI research that turns imagination into reality. A small yet agile independent research team is laying the groundwork for Artificial General Intelligence (AGI), pushing the boundaries of technology
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#contact">
-              도입 상담
+              Explore Our Journey
               <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a className="secondary-action" href="#platform">
-              플랫폼 보기
+              Research
             </a>
           </div>
         </div>
@@ -107,9 +106,9 @@ export default function Home() {
       <section className="section" id="platform">
         <div className="section-heading">
           <p className="eyebrow">Platform</p>
-          <h2>업무 현장에 맞게 조립되는 AI 기반</h2>
+          <h2>RESEARCH</h2>
           <p>
-            모델, 데이터, 권한, 감사 로그를 하나의 운영 레이어로 묶어 부서별 도구가 같은 기준으로 작동하게 합니다.
+             Beyond the current boundaries of AI. We are dedicated to open collaboration, making every step of our research transparent—from publishing research papers to open-sourcing our models..
           </p>
         </div>
         <div className="capability-grid">

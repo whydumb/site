@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NOVA Business AI",
-  description: "기업 업무 자동화를 위한 AI 플랫폼 데모 사이트",
+  title: "Alicia",
+  description: "Alicia AGI",
 };
 
 export default function RootLayout({
