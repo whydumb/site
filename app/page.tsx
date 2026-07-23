@@ -83,7 +83,7 @@ export default function Home() {
           preload="auto"
           aria-hidden="true"
         >
-          <source src="/videos/CLIP_2.MP4" type="video/mp4" />
+          <source src="/videos/CLIP_2.mp4" type="video/mp4" />
         </video>
         <div className="agi-shade" />
         <div className="agi-content">
