@@ -106,6 +106,31 @@ nav a[aria-current="page"] {
   padding: 0 16px;
 }
 
+/* ── 홈 전용 투명 헤더 ── */
+.clear-header {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.clear-header .brand {
+  color: var(--white);
+}
+
+.clear-header .header-action {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  transition: background 0.15s;
+}
+
+.clear-header .header-action:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
 .hero {
   align-items: center;
   display: flex;
@@ -351,6 +376,99 @@ p {
 
 .flow-row.active svg {
   color: var(--yellow);
+}
+
+/* ── AGI 밴드 (기존 Solutions 섹션 대체) ── */
+.agi-band {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 64svh;
+  overflow: hidden;
+  padding: 96px 38px;
+  position: relative;
+  text-align: center;
+}
+
+.agi-video {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.agi-shade {
+  background:
+    linear-gradient(0deg, rgba(9, 15, 13, 0.62), rgba(9, 15, 13, 0.26) 46%, rgba(9, 15, 13, 0.56)),
+    rgba(9, 15, 13, 0.16);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.agi-content {
+  max-width: 940px;
+  position: relative;
+  z-index: 2;
+}
+
+.agi-content h2 {
+  color: var(--white);
+  font-size: 3.4rem;
+  line-height: 1.08;
+  margin: 0;
+}
+
+/* ── Safety 밴드 (기존 Security 섹션 대체) ── */
+.safety-band {
+  align-items: center;
+  display: flex;
+  min-height: 64svh;
+  overflow: hidden;
+  padding: 96px 38px;
+  position: relative;
+}
+
+.safety-video {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.safety-shade {
+  background:
+    linear-gradient(90deg, rgba(9, 15, 13, 0.74), rgba(9, 15, 13, 0.32) 58%, rgba(9, 15, 13, 0.16)),
+    rgba(9, 15, 13, 0.12);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.safety-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+}
+
+.safety-content h2 {
+  color: var(--white);
+  font-size: 2.7rem;
+  line-height: 1.12;
+  margin: 0 0 16px;
+}
+
+.safety-content p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.06rem;
+  line-height: 1.75;
+  margin: 0;
 }
 
 .team-hero {
@@ -921,6 +1039,24 @@ footer {
     font-size: 2.2rem;
   }
 
+  .agi-band {
+    min-height: 54svh;
+    padding: 72px 22px;
+  }
+
+  .agi-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .safety-band {
+    min-height: 54svh;
+    padding: 72px 22px;
+  }
+
+  .safety-content h2 {
+    font-size: 2.2rem;
+  }
+
   .outcome-strip,
   .capability-grid,
   .split-section,
@@ -1033,6 +1169,14 @@ footer {
 
   h2 {
     font-size: 1.85rem;
+  }
+
+  .agi-content h2 {
+    font-size: 1.95rem;
+  }
+
+  .safety-content h2 {
+    font-size: 1.8rem;
   }
 
   .hero-copy {

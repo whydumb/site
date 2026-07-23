@@ -1,0 +1,280 @@
+/* ── /motion 페이지 전용 스타일 ─────────────────────────────
+   globals.css의 토큰(--ink, --yellow, --green, --line 등)을 그대로
+   재사용합니다. 고정 헤더(72px)가 히어로 위에 뜨는 기존 패턴처럼,
+   스테이지가 화면 전체를 채우고 헤더가 그 위에 겹칩니다. */
+
+.motion-page {
+  background: #090f0d;
+}
+
+.motion-console {
+  height: 100svh;
+  overflow: hidden;
+  position: relative;
+}
+
+.motion-stage {
+  inset: 0;
+  position: absolute;
+}
+
+.motion-stage canvas {
+  display: block;
+}
+
+/* ── 좌상단 HUD ── */
+.motion-hud {
+  left: 38px;
+  pointer-events: none;
+  position: absolute;
+  top: calc(72px + 44px);
+  z-index: 5;
+}
+
+.motion-hud h1 {
+  color: var(--white);
+  font-size: 2.1rem;
+  line-height: 1.18;
+  margin: 0;
+}
+
+/* ── 하단 커맨드 독 ── */
+.motion-dock {
+  bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: min(560px, calc(100% - 44px));
+  z-index: 5;
+}
+
+.motion-status {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0;
+  min-height: 20px;
+  text-align: center;
+}
+
+.motion-status strong {
+  color: var(--yellow);
+  letter-spacing: 0.04em;
+}
+
+.motion-status.error {
+  color: #ff9d8c;
+}
+
+.motion-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.motion-quick button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  min-height: 38px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.motion-quick button:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: var(--white);
+}
+
+.motion-quick button.active {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+}
+
+.motion-quick button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.motion-input {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(9, 15, 13, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.motion-input input {
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  flex: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  min-width: 0;
+  outline: none;
+  padding: 0 8px;
+}
+
+.motion-input input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.motion-send {
+  background: var(--white);
+  border: 0;
+  border-radius: 8px;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 900;
+  min-height: 46px;
+  padding: 0 20px;
+  transition: background 0.15s;
+}
+
+.motion-send:hover:not(:disabled) {
+  background: #edf1ee;
+}
+
+.motion-send:disabled {
+  background: rgba(255, 255, 255, 0.28);
+  color: rgba(16, 21, 19, 0.55);
+  cursor: not-allowed;
+}
+
+/* ── 로딩 / 오류 오버레이 ── */
+.motion-boot {
+  align-items: center;
+  background: rgba(9, 15, 13, 0.92);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  inset: 0;
+  justify-content: center;
+  padding: 96px 22px 22px;
+  position: absolute;
+  z-index: 8;
+}
+
+.motion-boot > p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.94rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.motion-spinner {
+  animation: motion-spin 0.9s linear infinite;
+  border: 3px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  border-top-color: var(--green);
+  height: 36px;
+  width: 36px;
+}
+
+@keyframes motion-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-spinner {
+    animation-duration: 2.4s;
+  }
+}
+
+.motion-error {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 520px;
+  padding: 26px 28px;
+  width: 100%;
+}
+
+.motion-error b {
+  display: inline-block;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.motion-error code {
+  background: #eef3f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  padding: 2px 7px;
+}
+
+.motion-error-detail {
+  color: var(--muted);
+  display: block;
+  font-size: 0.86rem;
+  margin-top: 12px;
+  word-break: break-all;
+}
+
+.motion-dismiss {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  margin-top: 16px;
+  min-height: 42px;
+  padding: 0 18px;
+}
+
+.motion-dismiss:hover {
+  background: #f4f7f5;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 900px) {
+  .motion-hud {
+    left: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .motion-hud {
+    top: calc(66px + 28px);
+  }
+
+  .motion-hud h1 {
+    font-size: 1.6rem;
+  }
+
+  .motion-dock {
+    bottom: 22px;
+    width: calc(100% - 28px);
+  }
+
+  .motion-send {
+    min-height: 42px;
+    padding: 0 16px;
+  }
+}
