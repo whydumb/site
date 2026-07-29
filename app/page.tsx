@@ -120,7 +120,7 @@ export default function Home() {
           preload="auto"
           aria-hidden="true"
         >
-          <source src="/videos/CLIP_3.MP4" type="video/mp4" />
+          <source src="/videos/CLIP_3.mp4" type="video/mp4" />
         </video>
         <div className="safety-shade" />
         <div className="safety-content">
